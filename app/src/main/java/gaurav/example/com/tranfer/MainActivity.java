@@ -1,5 +1,7 @@
 package gaurav.example.com.tranfer;
 
+import java.nio.ByteBuffer;
+import java.nio.IntBuffer;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -24,6 +26,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
+
 
     TextView textInfo;
     TextView textSearchedEndpoint;
@@ -84,8 +87,13 @@ public class MainActivity extends ActionBarActivity {
 
                     if(deviceFound != null){
 
-                        String tOut = textOut.getText().toString();
-                        byte[] bytesOut = tOut.getBytes(); //convert String to byte[]
+                        //String tOut = textOut.getText().toString();
+                        //byte[] bytesOut = tOut.getBytes(); //convert String to byte[]
+                        int arr[]={255,0,0};
+                        ByteBuffer byteBuffer = ByteBuffer.allocate(arr.length * 4);
+                        IntBuffer intBuffer = byteBuffer.asIntBuffer();
+                        intBuffer.put(arr);
+                        byte[] bytesOut=byteBuffer.array();
                         int usbResult = usbDeviceConnection.bulkTransfer(
                                 endpointOut, bytesOut, bytesOut.length, 0);
 
