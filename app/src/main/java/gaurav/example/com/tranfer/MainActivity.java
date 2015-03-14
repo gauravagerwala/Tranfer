@@ -89,7 +89,7 @@ public class MainActivity extends ActionBarActivity {
 
                         //String tOut = textOut.getText().toString();
                         //byte[] bytesOut = tOut.getBytes(); //convert String to byte[]
-                        int arr[]={255,0,0};
+                        int arr[]={255,255,255};
                         ByteBuffer byteBuffer = ByteBuffer.allocate(arr.length * 4);
                         IntBuffer intBuffer = byteBuffer.asIntBuffer();
                         intBuffer.put(arr);
@@ -278,9 +278,9 @@ public class MainActivity extends ActionBarActivity {
                         encodingSetting, // buffer
                         7, // length
                         0); // timeout
-                Toast.makeText(MainActivity.this,
+               /* Toast.makeText(MainActivity.this,
                         "controlTransfer(RQSID_SET_LINE_CODING): " + usbResult,
-                        Toast.LENGTH_LONG).show();
+                        Toast.LENGTH_LONG).show();*/
 
     /*
     byte[] bytesHello = new byte[] { (byte) 'H', 'e', 'l', 'l',
@@ -343,11 +343,11 @@ public class MainActivity extends ActionBarActivity {
 
                 deviceFound = (UsbDevice) intent
                         .getParcelableExtra(UsbManager.EXTRA_DEVICE);
-                Toast.makeText(
+               /* Toast.makeText(
                         MainActivity.this,
                         "ACTION_USB_DEVICE_ATTACHED: \n"
                                 + deviceFound.toString(), Toast.LENGTH_LONG)
-                        .show();
+                        .show();*/
                 textStatus.setText("ACTION_USB_DEVICE_ATTACHED: \n"
                         + deviceFound.toString());
 
@@ -358,9 +358,9 @@ public class MainActivity extends ActionBarActivity {
                 UsbDevice device = (UsbDevice) intent
                         .getParcelableExtra(UsbManager.EXTRA_DEVICE);
 
-                Toast.makeText(MainActivity.this,
+                /*Toast.makeText(MainActivity.this,
                         "ACTION_USB_DEVICE_DETACHED: \n" + device.toString(),
-                        Toast.LENGTH_LONG).show();
+                        Toast.LENGTH_LONG).show();*/
                 textStatus.setText("ACTION_USB_DEVICE_DETACHED: \n"
                         + device.toString());
 
