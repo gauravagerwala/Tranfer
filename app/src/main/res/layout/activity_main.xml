@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,50 +7,123 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="gaurav.example.com.tranfer.MainActivity" >
+    tools:context="gaurav.example.com.tranfer.MainActivity"
+    android:weightSum="1">
 
-    <EditText
-        android:id="@+id/textout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New ToggleButton"
+        android:id="@+id/tg1"
+        android:checked="false" />
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New ToggleButton"
+        android:id="@+id/tg2"
+        android:checked="false"
+        android:layout_gravity="right"
+        android:layout_alignTop="@+id/tg1"
+        android:layout_centerHorizontal="true" />
+
     <Button
         android:id="@+id/send"
-        android:layout_width="match_parent"
+        android:layout_width="133dp"
         android:layout_height="wrap_content"
-        android:text="Send"/>
+        android:text="Send"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="126dp"
+        android:layout_below="@+id/tg2"
+        android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:id="@+id/textstatus"
-        android:layout_width="match_parent"
+    <ToggleButton
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold" />
+        android:text="New ToggleButton"
+        android:id="@+id/tg3"
+        android:checked="false"
+        android:layout_gravity="right"
+        android:layout_alignBottom="@+id/tg2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
-    <TextView
-        android:id="@+id/textdevicename"
-        android:layout_width="match_parent"
+    <ToggleButton
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold|italic" />
+        android:text="New ToggleButton"
+        android:id="@+id/tg4"
+        android:checked="false"
+        android:layout_gravity="right"
+        android:layout_alignBaseline="@+id/send"
+        android:layout_alignBottom="@+id/send"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New ToggleButton"
+        android:id="@+id/tg5"
+        android:checked="false"
+        android:layout_gravity="right"
+        android:layout_below="@+id/send"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="118dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New ToggleButton"
+        android:id="@+id/tg6"
+        android:checked="false"
+        android:layout_gravity="right"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/tg5"
+        android:layout_alignStart="@+id/tg5" />
 
-            <TextView
-                android:id="@+id/info"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New ToggleButton"
+        android:id="@+id/tg8"
+        android:checked="false"
+        android:layout_gravity="right"
+        android:layout_alignTop="@+id/tg6"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-            <TextView
-                android:id="@+id/searchedendpoint"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textStyle="bold" />
-        </LinearLayout>
-    </ScrollView>
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New ToggleButton"
+        android:id="@+id/tg7"
+        android:checked="false"
+        android:layout_gravity="right"
+        android:layout_alignTop="@+id/tg6"
+        android:layout_centerHorizontal="true" />
 
-</LinearLayout>
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New ToggleButton"
+        android:id="@+id/tg9"
+        android:checked="false"
+        android:layout_gravity="right"
+        android:layout_alignTop="@+id/tg5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New ToggleButton"
+        android:id="@+id/tg10"
+        android:checked="false"
+        android:layout_gravity="right"
+        android:layout_alignTop="@+id/send"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

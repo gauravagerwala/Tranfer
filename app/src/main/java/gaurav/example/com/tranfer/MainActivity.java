@@ -24,13 +24,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 public class MainActivity extends ActionBarActivity {
 
 
     TextView textInfo;
     TextView textSearchedEndpoint;
-
+    ToggleButton tg1,tg2,tg3,tg4,tg5,tg6,tg7,tg8,tg9,tg10;
     TextView textDeviceName;
     TextView textStatus;
 
@@ -60,6 +61,18 @@ public class MainActivity extends ActionBarActivity {
         textDeviceName = (TextView) findViewById(R.id.textdevicename);
         textInfo = (TextView) findViewById(R.id.info);
         textSearchedEndpoint = (TextView) findViewById(R.id.searchedendpoint);
+        tg1=(ToggleButton)findViewById(R.id.tg1);
+        tg2=(ToggleButton)findViewById(R.id.tg2);
+        tg3=(ToggleButton)findViewById(R.id.tg3);
+        tg4=(ToggleButton)findViewById(R.id.tg4);
+        tg5=(ToggleButton)findViewById(R.id.tg5);
+        tg6=(ToggleButton)findViewById(R.id.tg6);
+        tg7=(ToggleButton)findViewById(R.id.tg7);
+        tg8=(ToggleButton)findViewById(R.id.tg8);
+        tg9=(ToggleButton)findViewById(R.id.tg9);
+        tg10=(ToggleButton)findViewById(R.id.tg10);
+
+
 
         // register the broadcast receiver
         mPermissionIntent = PendingIntent.getBroadcast(this, 0, new Intent(
@@ -87,9 +100,61 @@ public class MainActivity extends ActionBarActivity {
 
                     if(deviceFound != null){
 
+                        int arr[]=new int[30];
+
+                        if(tg1.isChecked()){
+                            arr[0]=255;
+                            arr[1]=0;
+                            arr[2]=0;
+                        }
+                        if(tg2.isChecked()==true){
+                            arr[3]=255;
+                            arr[4]=0;
+                            arr[5]=0;
+                        }
+                        if(tg3.isChecked()==true){
+                            arr[6]=255;
+                            arr[7]=0;
+                            arr[8]=0;
+                        }
+                        if(tg1.isChecked()==true){
+                            arr[9]=255;
+                            arr[10]=0;
+                            arr[11]=0;
+                        }
+                        if(tg1.isChecked()==true){
+                            arr[12]=255;
+                            arr[13]=0;
+                            arr[14]=0;
+                        }
+                        if(tg1.isChecked()==true){
+                            arr[15]=255;
+                            arr[16]=0;
+                            arr[17]=0;
+                        }
+                        if(tg1.isChecked()==true){
+                            arr[18]=255;
+                            arr[19]=0;
+                            arr[20]=0;
+                        }
+                        if(tg1.isChecked()==true){
+                            arr[21]=255;
+                            arr[22]=0;
+                            arr[23]=0;
+                        }
+                        if(tg1.isChecked()==true){
+                            arr[24]=255;
+                            arr[25]=0;
+                            arr[26]=0;
+                        }
+                        if(tg1.isChecked()==true){
+                            arr[27]=255;
+                            arr[28]=0;
+                            arr[29]=0;
+                        }
+
                         //String tOut = textOut.getText().toString();
                         //byte[] bytesOut = tOut.getBytes(); //convert String to byte[]
-                        int arr[]={255,255,255};
                         ByteBuffer byteBuffer = ByteBuffer.allocate(arr.length * 4);
                         IntBuffer intBuffer = byteBuffer.asIntBuffer();
                         intBuffer.put(arr);
@@ -261,10 +326,10 @@ public class MainActivity extends ActionBarActivity {
                         0, // length
                         0); // timeout
 
-                Toast.makeText(
+                /*Toast.makeText(
                         MainActivity.this,
                         "controlTransfer(SET_CONTROL_LINE_STATE): " + usbResult,
-                        Toast.LENGTH_LONG).show();
+                        Toast.LENGTH_LONG).show();*/
 
                 // baud rate = 9600
                 // 8 data bit
